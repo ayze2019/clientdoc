@@ -30,7 +30,7 @@
     </licenses>
 
     <modules>
-        
+        <module>clientdoc-gui</module>
     </modules>
 
     <properties>
