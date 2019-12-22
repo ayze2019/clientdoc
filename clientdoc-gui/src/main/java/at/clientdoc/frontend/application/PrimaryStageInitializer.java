@@ -1,15 +1,16 @@
-package at.clientdoc.frontend.controller;
+package at.clientdoc.frontend.application;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import net.rgielen.fxweaver.core.FxmlView;
+import at.clientdoc.frontend.controller.HelloWorldController;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import net.rgielen.fxweaver.core.FxWeaver;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
 /**
  * @author fs-green
- * @date 21.12.19
+ * @date 22.12.19
  * <p>
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,20 +25,20 @@ import org.springframework.stereotype.Component;
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 @Component
-@FxmlView("hello_world.fxml")
-public class HelloWorldController {
+public class PrimaryStageInitializer implements ApplicationListener<StageReadyEvent> {
 
-    @FXML
-    private Label lblMessage;
-
-    @FXML
-    private TextField txtName;
+    private final FxWeaver fxWeaver;
 
     @Autowired
-    private Greeter greeter;
+    public PrimaryStageInitializer(FxWeaver fxWeaver) {
+        this.fxWeaver = fxWeaver;
+    }
 
-    public void updateMessage() {
-        String greeting = this.greeter.greet(this.txtName.getText());
-        this.lblMessage.setText(greeting);
+    @Override
+    public void onApplicationEvent(StageReadyEvent event) {
+        Stage stage = event.stage;
+        Scene scene = new Scene(this.fxWeaver.loadView(HelloWorldController.class), 400, 300);
+        stage.setScene(scene);
+        stage.show();
     }
 }

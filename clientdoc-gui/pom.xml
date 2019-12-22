@@ -9,6 +9,10 @@
     <artifactId>clientdoc-gui</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>net.rgielen</groupId>
+            <artifactId>javafx-weaver-spring-boot-starter</artifactId>
+        </dependency>
         <!-- OpenJFX -->
         <dependency>
             <groupId>org.openjfx</groupId>
@@ -42,6 +46,10 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-swing</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
         </dependency>
     </dependencies>
 

@@ -1,12 +1,13 @@
-package at.clientdoc.frontend.controller;
+package at.clientdoc.frontend;
 
-import org.springframework.stereotype.Component;
-
-import javax.annotation.PostConstruct;
+import at.clientdoc.frontend.application.SpringbootJavaFxApplication;
+import javafx.application.Application;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
+ * adapted from https://github.com/rgielen/javafx-weaver/tree/1.3.0
  * @author fs-green
- * @date 21.12.19
+ * @date 22.12.19
  * <p>
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,16 +21,11 @@ import javax.annotation.PostConstruct;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-@Component
-public class GreeterImpl implements Greeter {
+@SpringBootApplication
+public class FxWeaverSpringBootStarterSampleApplication {
 
-    @PostConstruct
-    public void init() {
-        System.out.println("in PostConstruct");
+    public static void main(String[] args) {
+        Application.launch(SpringbootJavaFxApplication.class, args);
     }
 
-    @Override
-    public String greet(String name) {
-        return "Hi " + name + "! Welcome to Spring + JavaFX!";
-    }
 }

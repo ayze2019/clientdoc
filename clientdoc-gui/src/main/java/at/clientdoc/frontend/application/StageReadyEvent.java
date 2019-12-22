@@ -1,12 +1,11 @@
-package at.clientdoc.frontend.controller;
+package at.clientdoc.frontend.application;
 
-import org.springframework.stereotype.Component;
-
-import javax.annotation.PostConstruct;
+import javafx.stage.Stage;
+import org.springframework.context.ApplicationEvent;
 
 /**
  * @author fs-green
- * @date 21.12.19
+ * @date 22.12.19
  * <p>
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,16 +19,12 @@ import javax.annotation.PostConstruct;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-@Component
-public class GreeterImpl implements Greeter {
+public class StageReadyEvent extends ApplicationEvent {
 
-    @PostConstruct
-    public void init() {
-        System.out.println("in PostConstruct");
-    }
+    public final Stage stage;
 
-    @Override
-    public String greet(String name) {
-        return "Hi " + name + "! Welcome to Spring + JavaFX!";
+    public StageReadyEvent(Stage stage) {
+        super(stage);
+        this.stage = stage;
     }
 }
