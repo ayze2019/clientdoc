@@ -5,6 +5,7 @@ import javafx.application.Application;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
+ * main entry point for the whole application
  * adapted from https://github.com/rgielen/javafx-weaver/tree/1.3.0
  * @author fs-green
  * @date 22.12.19
