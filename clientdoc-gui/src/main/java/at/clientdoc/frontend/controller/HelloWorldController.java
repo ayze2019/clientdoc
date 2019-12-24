@@ -1,5 +1,6 @@
 package at.clientdoc.frontend.controller;
 
+import at.clientdoc.business.greeter.Greeter;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;

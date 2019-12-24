@@ -9,6 +9,13 @@
     <artifactId>clientdoc-business-impl</artifactId>
 
     <dependencies>
-
+        <dependency>
+            <groupId>at.clientdoc</groupId>
+            <artifactId>clientdoc-business-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+        </dependency>
     </dependencies>
 </project>

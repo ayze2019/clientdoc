@@ -1,4 +1,4 @@
-package at.clientdoc.frontend.controller;
+package at.clientdoc.business.greeter;
 
 public interface Greeter {
 

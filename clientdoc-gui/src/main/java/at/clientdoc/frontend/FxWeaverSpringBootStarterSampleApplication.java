@@ -22,7 +22,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "at.clientdoc")
 public class FxWeaverSpringBootStarterSampleApplication {
 
     public static void main(String[] args) {
