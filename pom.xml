@@ -30,6 +30,9 @@
     </licenses>
 
     <modules>
+        <module>clientdoc-domainmodel</module>
+        <module>clientdoc-dbrepo</module>
+        <module>clientdoc-business</module>
         <module>clientdoc-gui</module>
     </modules>
 
