@@ -9,17 +9,16 @@
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="at.clientdoc.frontend.controller.IndexController">
     <MenuBar>
-        <Menu text="Profil">
-            <MenuItem text="%hallo"/>
+        <Menu text="%index.menubar.profil">
             <SeparatorMenuItem/>
             <MenuItem text="Exit"/>
         </Menu>
-        <Menu text="KlientIn">
-            <MenuItem text="Neu" onAction="#openAddNewKlientIn"/>
-            <MenuItem text="Suchen" onAction="#openSearchNewKlientIn"/>
+        <Menu text="%index.menubar.klient">
+            <MenuItem text="%index.menu.new.button" onAction="#openAddNewKlientIn"/>
+            <MenuItem text="%index.menu.search.button" onAction="#openSearchNewKlientIn"/>
         </Menu>
-        <Menu text="Help">
-            <MenuItem text="About"/>
+        <Menu text="%index.menubar.help">
+            <MenuItem text="%index.menu.search.about"/>
         </Menu>
     </MenuBar>
 
