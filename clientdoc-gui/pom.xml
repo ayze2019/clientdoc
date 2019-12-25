@@ -9,6 +9,7 @@
     <artifactId>clientdoc-gui</artifactId>
 
     <dependencies>
+        <!-- Internal Maven Modules -->
         <dependency>
             <groupId>at.clientdoc</groupId>
             <artifactId>clientdoc-domainmodel</artifactId>
@@ -17,6 +18,7 @@
             <groupId>at.clientdoc</groupId>
             <artifactId>clientdoc-business-impl</artifactId>
         </dependency>
+        <!-- Maven Dependencies -->
         <dependency>
             <groupId>net.rgielen</groupId>
             <artifactId>javafx-weaver-spring-boot-starter</artifactId>
