@@ -1,6 +1,5 @@
 package at.clientdoc.frontend.application;
 
-import at.clientdoc.frontend.controller.HelloWorldController;
 import at.clientdoc.frontend.controller.IndexController;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -54,7 +53,7 @@ public class PrimaryStageInitializer implements ApplicationListener<StageReadyEv
         try {
             ResourceBundle resourceBundle = new PropertyResourceBundle(new FileInputStream(new File(resource.getFile())));
             Stage stage = event.stage;
-            Scene scene = new Scene(this.fxWeaver.loadView(IndexController.class, resourceBundle), 400, 300);
+            Scene scene = new Scene(this.fxWeaver.loadView(IndexController.class, resourceBundle), 750, 400);
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
