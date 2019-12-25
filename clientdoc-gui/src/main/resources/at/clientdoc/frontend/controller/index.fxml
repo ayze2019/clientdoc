@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox id="vbox" maxWidth="Infinity"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="at.clientdoc.frontend.controller.IndexController">
+    <MenuBar>
+        <Menu text="Profil">
+            <MenuItem text="%hallo"/>
+            <SeparatorMenuItem/>
+            <MenuItem text="Exit"/>
+        </Menu>
+        <Menu text="KlientIn">
+            <MenuItem text="Neu" onAction="#openAddNewKlientIn"/>
+            <MenuItem text="Suchen" onAction="#openSearchNewKlientIn"/>
+        </Menu>
+        <Menu text="Help">
+            <MenuItem text="About"/>
+        </Menu>
+    </MenuBar>
+
+    <StackPane id="StackPane">
+        <AnchorPane fx:id="newEntryKlientIn" visible="false" maxWidth="Infinity">
+            <fx:include source="newEntryKlientIn.fxml"/>
+        </AnchorPane>
+        <AnchorPane fx:id="searchKlientInTable" visible="false">
+            <fx:include source="searchKlientIn.fxml"/>
+        </AnchorPane>
+    </StackPane>
+</VBox>

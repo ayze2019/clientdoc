@@ -1,0 +1,40 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" id="AnchorPane"
+            fx:controller="at.clientdoc.frontend.controller.KlientInSearchController">
+
+    <VBox>
+        <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
+
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Label fx:id="lblVorname" text="Vorname: "/>
+            <TextField fx:id="txtVorname" prefWidth="100.0" onKeyPressed="#onEnterKeyPressed"/>
+            <Label fx:id="lblNachname" text="Nachname: " layoutX="14.0"/>
+            <TextField fx:id="txtNachname" prefWidth="100.0" onKeyPressed="#onEnterKeyPressed"/>
+            <Button text="Suchen" layoutX="226.0" layoutY="15.0" mnemonicParsing="false" onAction="#triggerSearch"/>
+        </HBox>
+
+        <TableView fx:id="tableView" GridPane.columnIndex="0" GridPane.rowIndex="1" visible="false">
+            <columns>
+                <TableColumn text="Vorname">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="vorname"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Nachname">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="nachname"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Geschlecht">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="geschlecht"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </VBox>
+</AnchorPane>

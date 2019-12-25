@@ -1,0 +1,26 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" id="AnchorPane"
+            fx:controller="at.clientdoc.frontend.controller.NewEntryKlientInController">
+    <VBox>
+        <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Label text="Vorname: " layoutX="14.0"/>
+            <TextField fx:id="txtVorname" layoutX="14.0" layoutY="14.0" prefWidth="100.0" onKeyPressed="#onEnterKeyPressed"/>
+            <Label text="Nachname: " layoutX="14.0"/>
+            <TextField fx:id="txtNachname" layoutX="14.0" layoutY="14.0" prefWidth="100.0" onKeyPressed="#onEnterKeyPressed"/>
+            <Label text="Geschlecht: " layoutX="14.0"/>
+            <ComboBox fx:id="cmbGeschlecht">
+                <value>
+                    <String fx:value="Bitte wählen"/>
+                </value>
+            </ComboBox>
+            <Button text="Speichern" layoutX="226.0" layoutY="15.0" mnemonicParsing="false" onAction="#triggerSave"/>
+        </HBox>
+    </VBox>
+</AnchorPane>

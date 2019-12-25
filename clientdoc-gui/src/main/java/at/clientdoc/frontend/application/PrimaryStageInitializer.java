@@ -1,12 +1,20 @@
 package at.clientdoc.frontend.application;
 
 import at.clientdoc.frontend.controller.HelloWorldController;
+import at.clientdoc.frontend.controller.IndexController;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import net.rgielen.fxweaver.core.FxWeaver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.net.URL;
+import java.util.PropertyResourceBundle;
+import java.util.ResourceBundle;
 
 /**
  * @author fs-green
@@ -36,9 +44,21 @@ public class PrimaryStageInitializer implements ApplicationListener<StageReadyEv
 
     @Override
     public void onApplicationEvent(StageReadyEvent event) {
-        Stage stage = event.stage;
-        Scene scene = new Scene(this.fxWeaver.loadView(HelloWorldController.class), 400, 300);
-        stage.setScene(scene);
-        stage.show();
+        ClassLoader classLoader = this.getClass().getClassLoader();
+        URL resource = classLoader.getResource("messages.properties");
+
+        if (resource == null) {
+            throw new IllegalStateException("Konnte messages.properties File nicht laden");
+        }
+
+        try {
+            ResourceBundle resourceBundle = new PropertyResourceBundle(new FileInputStream(new File(resource.getFile())));
+            Stage stage = event.stage;
+            Scene scene = new Scene(this.fxWeaver.loadView(IndexController.class, resourceBundle), 400, 300);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new IllegalStateException(e);
+        }
     }
 }

@@ -9,6 +9,9 @@
     <artifactId>clientdoc-business-api</artifactId>
 
     <dependencies>
-
+        <dependency>
+            <groupId>at.clientdoc</groupId>
+            <artifactId>clientdoc-domainmodel</artifactId>
+        </dependency>
     </dependencies>
 </project>
