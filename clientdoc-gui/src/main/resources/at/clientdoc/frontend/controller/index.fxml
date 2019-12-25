@@ -11,14 +11,14 @@
     <MenuBar>
         <Menu text="%index.menubar.profil">
             <SeparatorMenuItem/>
-            <MenuItem text="Exit"/>
+            <MenuItem text="%index.menubar.profil.exit"/>
         </Menu>
         <Menu text="%index.menubar.klient">
-            <MenuItem text="%index.menu.new.button" onAction="#openAddNewKlientIn"/>
-            <MenuItem text="%index.menu.search.button" onAction="#openSearchNewKlientIn"/>
+            <MenuItem text="%index.menubar.klient.new.button" onAction="#openAddNewKlientIn"/>
+            <MenuItem text="%index.menubar.klient.search.button" onAction="#openSearchNewKlientIn"/>
         </Menu>
         <Menu text="%index.menubar.help">
-            <MenuItem text="%index.menu.search.about"/>
+            <MenuItem text="%index.menubar.help.about"/>
         </Menu>
     </MenuBar>
 
