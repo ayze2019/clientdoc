@@ -58,6 +58,7 @@
 
         <!-- Apache 2.0 -->
         <apache.commons.lang3.version>3.8</apache.commons.lang3.version>
+        <commons-io.version>2.6</commons-io.version>
 
         <!-- Logger -->
         <!-- Apache 2.0 -->
@@ -109,12 +110,6 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>${spring.version}</version>
-        </dependency>
-        <!-- Apache Commons Lang 3 -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>${apache.commons.lang3.version}</version>
         </dependency>
         <!-- Logger -->
         <!-- log4j -->
@@ -205,6 +200,17 @@
                 <groupId>javax.annotation</groupId>
                 <artifactId>javax.annotation-api</artifactId>
                 <version>${javax.annotation-api.version}</version>
+            </dependency>
+            <!-- Apache Commons -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${apache.commons.lang3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
             </dependency>
 
             <!-- Test Frameworks -->
