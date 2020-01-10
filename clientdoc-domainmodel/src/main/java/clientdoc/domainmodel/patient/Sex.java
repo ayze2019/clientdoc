@@ -1,4 +1,4 @@
-package clientdoc.domainmodel.klientIn;
+package clientdoc.domainmodel.patient;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -19,23 +19,23 @@ import java.util.Arrays;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-public enum Geschlecht {
+public enum Sex {
 
-    WEIBLICH("weiblich"),
-    MAENNLICH("männlich"),
-    UNBEKANNT("unbekannt");
+    FEMALE("FEMALE"),
+    MALE("MALE"),
+    UNKNOWN("UNKNOWN");
 
-    private final String geschlecht;
+    private final String sex;
 
-    Geschlecht(String geschlecht) {
-        this.geschlecht = geschlecht;
+    Sex(String sex) {
+        this.sex = sex;
     }
 
-    public String getGeschlecht() {
-        return geschlecht;
+    public String getSex() {
+        return sex;
     }
 
-    public static boolean exists(String geschlechtExists) {
-        return Arrays.stream(values()).anyMatch(geschlecht -> StringUtils.equals(geschlecht.geschlecht, geschlechtExists));
+    public static boolean exists(String sexExists) {
+        return Arrays.stream(values()).anyMatch(sex -> StringUtils.equals(sex.sex, sexExists));
     }
 }

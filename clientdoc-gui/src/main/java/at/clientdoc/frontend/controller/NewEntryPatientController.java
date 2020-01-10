@@ -1,19 +1,21 @@
 package at.clientdoc.frontend.controller;
 
-import at.clientdoc.business.klientin.KlientinBusiness;
-import clientdoc.domainmodel.klientIn.KlientIn;
+import at.clientdoc.business.patient.PatientBusiness;
+import clientdoc.domainmodel.patient.Sex;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableView;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import net.rgielen.fxweaver.core.FxmlView;
+import org.apache.commons.lang3.EnumUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.stream.Collectors;
 
 /**
  * @author fs-green
@@ -32,42 +34,44 @@ import org.springframework.stereotype.Component;
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 @Component
-@FxmlView("searchKlientIn.fxml")
-public class KlientInSearchController {
+@FxmlView("newEntryPatient.fxml")
+public class NewEntryPatientController {
 
     @FXML
-    public Label lblVorname;
+    private TextField txtForename;
 
     @FXML
-    private TextField txtVorname;
+    private TextField txtSurename;
 
     @FXML
-    public Label lblNachname;
-
-    @FXML
-    private TextField txtNachname;
-
-    @FXML
-    private TableView<KlientIn> tableView;
+    public ComboBox<String> cmbSex;
 
     @Autowired
-    private KlientinBusiness klientinBusiness;
+    private PatientBusiness patientBusiness;
 
     @FXML
-    public void triggerSearch(final ActionEvent event) {
-        search();
+    public void initialize() {
+        ObservableList<String> options = FXCollections.observableArrayList(EnumUtils.getEnumList(Sex.class)
+                .stream()
+                .map(Enum::toString)
+                .collect(Collectors.toList()));
+        this.cmbSex.getItems().addAll(options);
+    }
+
+    @FXML
+    public void triggerSave(final ActionEvent event) {
+        save();
     }
 
     public void onEnterKeyPressed(KeyEvent event) {
         if (KeyCode.ENTER == event.getCode()) {
-            search();
+            save();
         }
     }
 
-    private void search() {
-        this.tableView.setVisible(true);
-        ObservableList<KlientIn> data = FXCollections.observableList(
-                this.klientinBusiness.geData(this.txtVorname.getText(), this.txtNachname.getText()));
-        this.tableView.setItems(data);
+    private void save() {
+        String selectedItem = this.cmbSex.getSelectionModel().getSelectedItem();
+        this.patientBusiness.save(this.txtForename.getText(), this.txtSurename.getText(),
+                Sex.exists(selectedItem) ? Sex.valueOf(selectedItem) : null);
     }
 }

@@ -4,7 +4,7 @@
 <?import javafx.geometry.Insets?>
 
 <AnchorPane xmlns:fx="http://javafx.com/fxml" id="AnchorPane"
-            fx:controller="at.clientdoc.frontend.controller.KlientInSearchController">
+            fx:controller="at.clientdoc.frontend.controller.PatientSearchController">
 
     <VBox>
         <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
@@ -21,17 +21,17 @@
             <columns>
                 <TableColumn text="Vorname">
                     <cellValueFactory>
-                        <PropertyValueFactory property="vorname"/>
+                        <PropertyValueFactory property="forename"/>
                     </cellValueFactory>
                 </TableColumn>
                 <TableColumn text="Nachname">
                     <cellValueFactory>
-                        <PropertyValueFactory property="nachname"/>
+                        <PropertyValueFactory property="surname"/>
                     </cellValueFactory>
                 </TableColumn>
                 <TableColumn text="Geschlecht">
                     <cellValueFactory>
-                        <PropertyValueFactory property="geschlecht"/>
+                        <PropertyValueFactory property="sex"/>
                     </cellValueFactory>
                 </TableColumn>
             </columns>

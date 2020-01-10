@@ -28,10 +28,10 @@ import org.springframework.stereotype.Component;
 public class IndexController {
 
     @FXML
-    public AnchorPane newEntryKlientIn;
+    public AnchorPane newEntryPatient;
 
     @FXML
-    private AnchorPane searchKlientInTable;
+    private AnchorPane searchPatientTable;
 
     @FXML
     public void closeApplication(final ActionEvent event) {
@@ -40,14 +40,14 @@ public class IndexController {
     }
 
     @FXML
-    public void openAddNewKlientIn(final ActionEvent event) {
-        this.searchKlientInTable.setVisible(false);
-        this.newEntryKlientIn.setVisible(true);
+    public void openAddNewPatient(final ActionEvent event) {
+        this.searchPatientTable.setVisible(false);
+        this.newEntryPatient.setVisible(true);
     }
 
     @FXML
-    public void openSearchNewKlientIn(final ActionEvent event) {
-        this.searchKlientInTable.setVisible(true);
-        this.newEntryKlientIn.setVisible(false);
+    public void openSearchNewPatient(final ActionEvent event) {
+        this.searchPatientTable.setVisible(true);
+        this.newEntryPatient.setVisible(false);
     }
 }

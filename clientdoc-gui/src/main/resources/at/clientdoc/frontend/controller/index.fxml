@@ -13,8 +13,8 @@
             <MenuItem text="%index.menubar.profil.exit" onAction="#closeApplication"/>
         </Menu>
         <Menu text="%index.menubar.klient">
-            <MenuItem text="%index.menubar.klient.new.button" onAction="#openAddNewKlientIn"/>
-            <MenuItem text="%index.menubar.klient.search.button" onAction="#openSearchNewKlientIn"/>
+            <MenuItem text="%index.menubar.klient.new.button" onAction="#openAddNewPatient"/>
+            <MenuItem text="%index.menubar.klient.search.button" onAction="#openSearchNewPatient"/>
         </Menu>
         <Menu text="%index.menubar.help">
             <MenuItem text="%index.menubar.help.about"/>
@@ -22,11 +22,11 @@
     </MenuBar>
 
     <StackPane id="StackPane">
-        <AnchorPane fx:id="newEntryKlientIn" visible="false" maxWidth="Infinity">
-            <fx:include source="newEntryKlientIn.fxml"/>
+        <AnchorPane fx:id="newEntryPatient" visible="false" maxWidth="Infinity">
+            <fx:include source="newEntryPatient.fxml"/>
         </AnchorPane>
-        <AnchorPane fx:id="searchKlientInTable" visible="false">
-            <fx:include source="searchKlientIn.fxml"/>
+        <AnchorPane fx:id="searchPatientTable" visible="false">
+            <fx:include source="searchPatient.fxml"/>
         </AnchorPane>
     </StackPane>
 </VBox>

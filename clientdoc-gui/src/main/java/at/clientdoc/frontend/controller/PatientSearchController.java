@@ -1,12 +1,13 @@
 package at.clientdoc.frontend.controller;
 
-import at.clientdoc.business.klientin.KlientinBusiness;
-import clientdoc.domainmodel.klientIn.Geschlecht;
+import at.clientdoc.business.patient.PatientBusiness;
+import clientdoc.domainmodel.patient.Patient;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -31,43 +32,42 @@ import org.springframework.stereotype.Component;
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 @Component
-@FxmlView("newEntryKlientIn.fxml")
-public class NewEntryKlientInController {
+@FxmlView("searchPatient.fxml")
+public class PatientSearchController {
+
+    @FXML
+    public Label lblVorname;
 
     @FXML
     private TextField txtVorname;
 
     @FXML
+    public Label lblNachname;
+
+    @FXML
     private TextField txtNachname;
 
     @FXML
-    public ComboBox<String> cmbGeschlecht;
+    private TableView<Patient> tableView;
 
     @Autowired
-    private KlientinBusiness klientinBusiness;
+    private PatientBusiness patientBusiness;
 
     @FXML
-    public void initialize() {
-        ObservableList<String> options = FXCollections.observableArrayList(
-                Geschlecht.WEIBLICH.getGeschlecht(),
-                Geschlecht.MAENNLICH.getGeschlecht());
-        this.cmbGeschlecht.getItems().addAll(options);
-    }
-
-    @FXML
-    public void triggerSave(final ActionEvent event) {
-        save();
+    public void triggerSearch(final ActionEvent event) {
+        search();
     }
 
     public void onEnterKeyPressed(KeyEvent event) {
         if (KeyCode.ENTER == event.getCode()) {
-            save();
+            search();
         }
     }
 
-    private void save() {
-        String selectedItem = this.cmbGeschlecht.getSelectionModel().getSelectedItem();
-        this.klientinBusiness.save(this.txtVorname.getText(), this.txtNachname.getText(),
-                Geschlecht.exists(selectedItem) ? Geschlecht.valueOf(selectedItem) : null);
+    private void search() {
+        this.tableView.setVisible(true);
+        ObservableList<Patient> data = FXCollections.observableList(
+                this.patientBusiness.geData(this.txtVorname.getText(), this.txtNachname.getText()));
+        this.tableView.setItems(data);
     }
 }

@@ -1,7 +1,7 @@
-package at.clientdoc.business.klientin;
+package at.clientdoc.business.patient;
 
-import clientdoc.domainmodel.klientIn.Geschlecht;
-import clientdoc.domainmodel.klientIn.KlientIn;
+import clientdoc.domainmodel.patient.Sex;
+import clientdoc.domainmodel.patient.Patient;
 
 import java.util.List;
 
@@ -20,10 +20,10 @@ import java.util.List;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-public interface KlientinBusiness {
+public interface PatientBusiness {
 
-    List<KlientIn> geData(String vorname, String nachname);
+    List<Patient> geData(String vorname, String nachname);
 
-    void save(String vorname, String nachname, Geschlecht geschlecht);
+    void save(String vorname, String nachname, Sex sex);
 
 }
