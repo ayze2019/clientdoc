@@ -41,7 +41,7 @@ public class SpringbootJavaFxApplication extends Application {
                 .run(getParameters().getRaw().toArray(new String[0]));
 
         // initialize H2 database
-        initH2();
+//        initH2();
     }
 
     @Override
