@@ -1,5 +1,6 @@
 package at.clientdoc.frontend.controller;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
@@ -31,6 +32,12 @@ public class IndexController {
 
     @FXML
     private AnchorPane searchKlientInTable;
+
+    @FXML
+    public void closeApplication(final ActionEvent event) {
+        Platform.exit();
+        System.exit(0);
+    }
 
     @FXML
     public void openAddNewKlientIn(final ActionEvent event) {
