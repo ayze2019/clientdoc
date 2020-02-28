@@ -9,6 +9,11 @@
     <artifactId>clientdoc-gui</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.9.5</version>
+        </dependency>
         <!-- Internal Maven Modules -->
         <dependency>
             <groupId>at.clientdoc</groupId>

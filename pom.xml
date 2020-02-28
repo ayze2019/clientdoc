@@ -57,7 +57,7 @@
         <!-- Database -->
 
         <!-- Apache 2.0 -->
-        <apache.commons.lang3.version>3.8</apache.commons.lang3.version>
+        <apache.commons.lang3.version>3.9</apache.commons.lang3.version>
         <commons-io.version>2.6</commons-io.version>
 
         <!-- Logger -->
@@ -66,11 +66,11 @@
 
         <!-- Test Frameworks -->
         <!-- EPL 1.0 -->
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13</junit.version>
         <!-- MIT -->
         <mockito.all.version>1.10.19</mockito.all.version>
         <!-- LGPL 2.1 -->
-        <dbunit.version>2.5.4</dbunit.version>
+        <dbunit.version>2.7.0</dbunit.version>
         <!-- Apache 2.0 -->
         <unitils-core.version>3.4.6</unitils-core.version>
         <!-- Apache 2.0 -->
