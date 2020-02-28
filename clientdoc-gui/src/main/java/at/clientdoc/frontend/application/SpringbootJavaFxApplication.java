@@ -4,12 +4,12 @@ import at.clientdoc.frontend.FxWeaverSpringBootStarterSampleApplication;
 import clientdoc.exception.ClientdocBusinessException;
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import org.apache.commons.io.FileUtils;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import javax.swing.*;
 import java.io.*;
 
 /**
@@ -46,6 +46,7 @@ public class SpringbootJavaFxApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+        Thread.setDefaultUncaughtExceptionHandler(SpringbootJavaFxApplication::showError);
         this.context.publishEvent(new StageReadyEvent(primaryStage));
     }
 
@@ -55,11 +56,25 @@ public class SpringbootJavaFxApplication extends Application {
         Platform.exit();
     }
 
+    private static void showError(Thread t, Throwable e) {
+        System.err.println("***Default exception handler***");
+        if (Platform.isFxApplicationThread()) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText(null);
+            alert.setContentText(e.getCause().getCause().getMessage());
+
+            alert.showAndWait();
+        } else {
+            System.err.println("An unexpected error occurred in " + t);
+        }
+    }
+
     private void initH2() {
         String stringToJarFile = System.getProperty("user.home") + File.separator + H2_VERSION;
         File file = FileUtils.getFile(stringToJarFile);
 
-        if(!file.exists()) {
+        if (!file.exists()) {
             copyH2JarFileToUserHome(stringToJarFile);
         }
 
