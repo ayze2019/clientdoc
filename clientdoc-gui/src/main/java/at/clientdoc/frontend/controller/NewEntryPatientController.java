@@ -63,12 +63,6 @@ public class NewEntryPatientController {
         save();
     }
 
-    public void onEnterKeyPressed(KeyEvent event) {
-        if (KeyCode.ENTER == event.getCode()) {
-            save();
-        }
-    }
-
     private void save() {
         String selectedItem = this.cmbSex.getSelectionModel().getSelectedItem();
         this.patientBusiness.save(this.txtForename.getText(), this.txtSurename.getText(),
