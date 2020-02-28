@@ -7,14 +7,16 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
+import javafx.util.StringConverter;
 import net.rgielen.fxweaver.core.FxmlView;
 import org.apache.commons.lang3.EnumUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.stream.Collectors;
 
 /**
@@ -37,6 +39,7 @@ import java.util.stream.Collectors;
 @FxmlView("newEntryPatient.fxml")
 public class NewEntryPatientController {
 
+    public static final String DATE_FORMAT = "dd.MM.yyyy";
     @FXML
     private TextField txtForename;
 
@@ -44,7 +47,25 @@ public class NewEntryPatientController {
     private TextField txtSurename;
 
     @FXML
-    public ComboBox<String> cmbSex;
+    private ComboBox<String> cmbSex;
+
+    @FXML
+    private DatePicker dpBirthdate;
+
+    @FXML
+    private TextField txtSocialInsuranceId;
+
+    @FXML
+    private TextField txtSocialInsuranceCarrier;
+
+    @FXML
+    private TextField txtAddress;
+
+    @FXML
+    private TextField txtCity;
+
+    @FXML
+    private TextField txtPhoneNumber;
 
     @Autowired
     private PatientBusiness patientBusiness;
@@ -56,6 +77,30 @@ public class NewEntryPatientController {
                 .map(Enum::toString)
                 .collect(Collectors.toList()));
         this.cmbSex.getItems().addAll(options);
+
+        this.dpBirthdate.setConverter(new StringConverter<>() {
+            String pattern = DATE_FORMAT;
+            DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(pattern);
+
+            @Override
+            public String toString(LocalDate date) {
+                if (date != null) {
+                    return dateFormatter.format(date);
+                } else {
+                    return "";
+                }
+            }
+
+            @Override
+            public LocalDate fromString(String string) {
+                if (string != null && !string.isEmpty()) {
+                    return LocalDate.parse(string, dateFormatter);
+                } else {
+                    return null;
+                }
+            }
+        });
+        dpBirthdate.setPromptText(DATE_FORMAT);
     }
 
     @FXML

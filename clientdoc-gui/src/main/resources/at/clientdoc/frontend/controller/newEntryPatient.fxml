@@ -36,7 +36,7 @@
                 <TextField fx:id="txtSurename" layoutX="14.0" layoutY="14.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
 
                 <Label text="%new.patient.sex" layoutX="14.0" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-                <ComboBox fx:id="cmbSex" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <ComboBox fx:id="cmbSex" GridPane.columnIndex="1" GridPane.rowIndex="1" promptText="%general.choose"/>
 
                 <Label text="%new.patient.birthdate" layoutX="14.0" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
                 <DatePicker fx:id="dpBirthdate" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
