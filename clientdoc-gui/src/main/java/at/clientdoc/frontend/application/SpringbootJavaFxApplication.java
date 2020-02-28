@@ -60,6 +60,7 @@ public class SpringbootJavaFxApplication extends Application {
     private static void showError(Thread t, Throwable e) {
         System.err.println("***Default exception handler***");
         if (Platform.isFxApplicationThread()) {
+            e.printStackTrace();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Information Dialog");
             alert.setHeaderText(null);

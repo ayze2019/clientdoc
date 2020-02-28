@@ -1,5 +1,8 @@
 package clientdoc.domainmodel.patient;
 
+import java.time.LocalDate;
+import java.time.Period;
+
 /**
  * Created by fs-green on 24.12.2019.
  * <p>
@@ -20,11 +23,23 @@ public class Patient {
     private String forename;
     private String surname;
     private Sex sex;
+    private LocalDate birthdate;
+    private String socialInsuranceId;
+    private String socialInsuranceCarrier;
+    private String address;
+    private String city;
+    private String phoneNumber;
 
-    public Patient(String forename, String surname, Sex sex) {
+    public Patient(String forename, String surname, Sex sex, LocalDate birthdate, String socialInsuranceId, String socialInsuranceCarrier, String address, String city, String phoneNumber) {
         this.forename = forename;
         this.surname = surname;
         this.sex = sex;
+        this.birthdate = birthdate;
+        this.socialInsuranceId = socialInsuranceId;
+        this.socialInsuranceCarrier = socialInsuranceCarrier;
+        this.address = address;
+        this.city = city;
+        this.phoneNumber = phoneNumber;
     }
 
     public String getForename() {
@@ -49,5 +64,57 @@ public class Patient {
 
     public void setSex(Sex sex) {
         this.sex = sex;
+    }
+
+    public LocalDate getBirthdate() {
+        return birthdate;
+    }
+
+    public void setBirthdate(LocalDate birthdate) {
+        this.birthdate = birthdate;
+    }
+
+    public String getSocialInsuranceId() {
+        return socialInsuranceId;
+    }
+
+    public void setSocialInsuranceId(String socialInsuranceId) {
+        this.socialInsuranceId = socialInsuranceId;
+    }
+
+    public String getSocialInsuranceCarrier() {
+        return socialInsuranceCarrier;
+    }
+
+    public void setSocialInsuranceCarrier(String socialInsuranceCarrier) {
+        this.socialInsuranceCarrier = socialInsuranceCarrier;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public int getAge() {
+        return Period.between(this.birthdate, LocalDate.now()).getYears();
     }
 }

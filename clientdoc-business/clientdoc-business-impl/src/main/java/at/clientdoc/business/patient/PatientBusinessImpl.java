@@ -1,11 +1,12 @@
 package at.clientdoc.business.patient;
 
-import clientdoc.domainmodel.patient.Sex;
 import clientdoc.domainmodel.patient.Patient;
+import clientdoc.domainmodel.patient.Sex;
 import clientdoc.exception.ClientdocBusinessException;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -53,12 +54,10 @@ public class PatientBusinessImpl implements PatientBusiness {
     private List<Patient> generateFakeList() {
         List<Patient> patientBusinessList = new ArrayList<>();
 
-        patientBusinessList.add(new Patient("Oliver", "Queen", Sex.MALE));
-        patientBusinessList.add(new Patient("Felicity", "Smoak", Sex.FEMALE));
-        patientBusinessList.add(new Patient("Barry", "Allen", Sex.MALE));
-        patientBusinessList.add(new Patient("Kara", "Zor-El", Sex.FEMALE));
-        patientBusinessList.add(new Patient("John", "Diggle", Sex.MALE));
-        patientBusinessList.add(new Patient("Laurel", "Lance", Sex.FEMALE));
+        patientBusinessList.add(new Patient("Oliver", "Queen", Sex.MALE, LocalDate.of(1990, 1, 1), "1234567890", "ÖGK", "address", "city", "+43123456790"));
+        patientBusinessList.add(new Patient("Felicity", "Smoak", Sex.FEMALE, LocalDate.of(1990, 1, 1), "1234567890", "ÖGK", "address", "city", "+43123456790"));
+        patientBusinessList.add(new Patient("Barry", "Allen", Sex.MALE, LocalDate.of(1990, 1, 1), "1234567890", "ÖGK", "address", "city", "+43123456790"));
+        patientBusinessList.add(new Patient("Kara", "Zor-El", Sex.FEMALE, LocalDate.of(1990, 1, 1), "1234567890", "ÖGK", "address", "city", "+43123456790"));
 
         return patientBusinessList;
     }
