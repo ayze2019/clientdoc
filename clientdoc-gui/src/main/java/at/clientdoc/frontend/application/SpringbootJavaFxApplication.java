@@ -67,7 +67,7 @@ public class SpringbootJavaFxApplication extends Application {
 
             alert.showAndWait();
         } else {
-            System.err.println("An unexpected error occurred in " + t);
+            e.printStackTrace();
         }
     }
 
