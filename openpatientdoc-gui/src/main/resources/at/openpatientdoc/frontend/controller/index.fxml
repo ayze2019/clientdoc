@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<VBox id="vbox" maxWidth="Infinity"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="at.openpatientdoc.frontend.controller.IndexController">
+    <MenuBar>
+        <Menu text="%index.menubar.profil">
+            <SeparatorMenuItem/>
+            <MenuItem text="%index.menubar.profil.exit" onAction="#closeApplication"/>
+        </Menu>
+        <Menu text="%index.menubar.klient">
+            <MenuItem text="%index.menubar.klient.new.button" onAction="#openAddNewPatient"/>
+            <MenuItem text="%index.menubar.klient.search.button" onAction="#openSearchNewPatient"/>
+        </Menu>
+        <Menu text="%index.menubar.help">
+            <MenuItem text="%index.menubar.help.about"/>
+        </Menu>
+    </MenuBar>
+
+    <StackPane id="StackPane">
+        <AnchorPane fx:id="newEntryPatient" visible="false" maxWidth="Infinity">
+            <fx:include source="newEntryPatient.fxml"/>
+        </AnchorPane>
+        <AnchorPane fx:id="searchPatientTable" visible="false">
+            <fx:include source="searchPatient.fxml"/>
+        </AnchorPane>
+    </StackPane>
+</VBox>

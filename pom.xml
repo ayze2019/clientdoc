@@ -3,8 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>at.clientdoc</groupId>
-    <artifactId>clientdoc-parent</artifactId>
+    <groupId>at.openpatientdoc</groupId>
+    <artifactId>openpatientdoc-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
@@ -30,10 +30,10 @@
     </licenses>
 
     <modules>
-        <module>clientdoc-domainmodel</module>
-        <module>clientdoc-dbrepo</module>
-        <module>clientdoc-business</module>
-        <module>clientdoc-gui</module>
+        <module>openpatientdoc-domainmodel</module>
+        <module>openpatientdoc-dbrepo</module>
+        <module>openpatientdoc-business</module>
+        <module>openpatientdoc-gui</module>
     </modules>
 
     <properties>
@@ -124,28 +124,28 @@
         <dependencies>
             <!-- Internal Maven Modules -->
             <dependency>
-                <groupId>at.clientdoc</groupId>
-                <artifactId>clientdoc-domainmodel</artifactId>
+                <groupId>at.openpatientdoc</groupId>
+                <artifactId>openpatientdoc-domainmodel</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>at.clientdoc</groupId>
-                <artifactId>clientdoc-business-api</artifactId>
+                <groupId>at.openpatientdoc</groupId>
+                <artifactId>openpatientdoc-business-api</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>at.clientdoc</groupId>
-                <artifactId>clientdoc-business-impl</artifactId>
+                <groupId>at.openpatientdoc</groupId>
+                <artifactId>openpatientdoc-business-impl</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>at.clientdoc</groupId>
-                <artifactId>clientdoc-dbrepo-api</artifactId>
+                <groupId>at.openpatientdoc</groupId>
+                <artifactId>openpatientdoc-dbrepo-api</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>at.clientdoc</groupId>
-                <artifactId>clientdoc-dbrepo-impl</artifactId>
+                <groupId>at.openpatientdoc</groupId>
+                <artifactId>openpatientdoc-dbrepo-impl</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <!-- Maven Dependencies -->
@@ -327,7 +327,7 @@
                         </goals>
                         <configuration>
                             <includes>
-                                <include>at.clientdoc.*</include>
+                                <include>at.openpatientdoc.*</include>
                             </includes>
                             <!-- Sets the path to the file which contains the execution data. -->
                             <destFile>${sonar.jacoco.itReportPath}</destFile>
@@ -375,7 +375,7 @@
                         <!-- MainClass in mainfest make a executable jar -->
                         <archive>
                             <manifest>
-                                <mainClass>at.clientdoc.frontend.FxWeaverSpringBootStarterSampleApplication</mainClass>
+                                <mainClass>FxWeaverSpringBootStarterSampleApplication</mainClass>
                             </manifest>
                         </archive>
                     </configuration>

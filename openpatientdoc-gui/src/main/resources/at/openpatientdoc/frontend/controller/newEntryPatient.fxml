@@ -1,0 +1,85 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:id="AnchorPane"
+            fx:controller="at.openpatientdoc.frontend.controller.NewEntryPatientController">
+    <VBox spacing="1">
+        <padding>
+            <Insets top="25" right="25" bottom="25" left="25"/>
+        </padding>
+        <GridPane>
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" />
+                <ColumnConstraints hgrow="ALWAYS" prefWidth="180.0" />
+                <ColumnConstraints hgrow="ALWAYS" />
+                <ColumnConstraints hgrow="ALWAYS" prefWidth="180.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints prefHeight="30.0" vgrow="ALWAYS" />
+                <RowConstraints prefHeight="30.0" vgrow="ALWAYS" />
+                <RowConstraints prefHeight="30.0" vgrow="ALWAYS" />
+                <RowConstraints prefHeight="30.0" vgrow="ALWAYS" />
+                <RowConstraints prefHeight="30.0" vgrow="ALWAYS" />
+                <RowConstraints prefHeight="30.0" vgrow="ALWAYS" />
+                <RowConstraints prefHeight="30.0" vgrow="ALWAYS" />
+                <RowConstraints prefHeight="30.0" vgrow="ALWAYS" />
+            </rowConstraints>
+            <children>
+                <Label text="%new.patient.forename" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="txtForename" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <Label text="%new.patient.surname" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                <TextField fx:id="txtSurename" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+
+                <Label text="%new.patient.sex" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <ComboBox fx:id="cmbSex" GridPane.columnIndex="1" GridPane.rowIndex="1" promptText="%general.choose"/>
+
+                <Label text="%new.patient.birthdate" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                <DatePicker fx:id="dpBirthdate" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+
+                <Label text="%new.patient.address" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <TextField fx:id="txtAddress" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                <Label text="%new.patient.state" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+                <TextField fx:id="txtState" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+
+                <Label text="%new.patient.postcode" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <TextField fx:id="txtPostcode" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                <Label text="%new.patient.city" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+                <TextField fx:id="txtCity" GridPane.columnIndex="3" GridPane.rowIndex="3"/>
+
+                <Label text="%new.patient.phoneNumber" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                <TextField fx:id="txtPhoneNumber" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                <Label text="%new.patient.email" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+                <TextField fx:id="txtEmail" GridPane.columnIndex="3" GridPane.rowIndex="4"/>
+            </children>
+        </GridPane>
+
+        <GridPane>
+            <columnConstraints>
+                <ColumnConstraints hgrow="NEVER" prefWidth="200.0" />
+                <ColumnConstraints hgrow="NEVER" prefWidth="150.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints prefHeight="30.0" vgrow="ALWAYS" />
+                <RowConstraints prefHeight="30.0" vgrow="NEVER" />
+            </rowConstraints>
+            <children>
+                <Label text="%new.patient.socialInsuranceId" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="txtSocialInsuranceId" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                <Label text="%new.patient.socialInsuranceCarrier" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <TextField fx:id="txtSocialInsuranceCarrier" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            </children>
+        </GridPane>
+
+        <HBox alignment="CENTER_RIGHT">
+            <Button text="%general.save" layoutX="226.0" layoutY="15.0" mnemonicParsing="false" onAction="#triggerSave"/>
+        </HBox>
+    </VBox>
+</AnchorPane>
