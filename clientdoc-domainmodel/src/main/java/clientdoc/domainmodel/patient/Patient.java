@@ -30,6 +30,10 @@ public class Patient {
     private String city;
     private String phoneNumber;
 
+    public Patient() {
+        // do nothing
+    }
+
     public Patient(String forename, String surname, Sex sex, LocalDate birthdate, String socialInsuranceId, String socialInsuranceCarrier, String address, String city, String phoneNumber) {
         this.forename = forename;
         this.surname = surname;

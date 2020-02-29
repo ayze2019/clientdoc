@@ -24,6 +24,6 @@ public interface PatientBusiness {
 
     List<Patient> geData(String vorname, String nachname);
 
-    void save(String vorname, String nachname, Sex sex);
+    void save(Patient patient);
 
 }

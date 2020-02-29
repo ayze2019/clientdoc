@@ -1,6 +1,7 @@
 package at.clientdoc.frontend.controller;
 
 import at.clientdoc.business.patient.PatientBusiness;
+import clientdoc.domainmodel.patient.Patient;
 import clientdoc.domainmodel.patient.Sex;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -109,8 +110,22 @@ public class NewEntryPatientController {
     }
 
     private void save() {
-        String selectedItem = this.cmbSex.getSelectionModel().getSelectedItem();
-        this.patientBusiness.save(this.txtForename.getText(), this.txtSurename.getText(),
-                Sex.exists(selectedItem) ? Sex.valueOf(selectedItem) : null);
+        this.patientBusiness.save(getPatientFromFrontend());
+    }
+
+    private Patient getPatientFromFrontend() {
+        Patient patient = new Patient();
+
+        patient.setForename(this.txtForename.getText());
+        patient.setSurname(this.txtSurename.getText());
+        patient.setSex(Sex.valueOf(this.cmbSex.getSelectionModel().getSelectedItem()));
+        patient.setBirthdate(this.dpBirthdate.getValue());
+        patient.setSocialInsuranceId(this.txtSocialInsuranceId.getText());
+        patient.setSocialInsuranceCarrier(this.txtSocialInsuranceCarrier.getText());
+        patient.setAddress(this.txtAddress.getText());
+        patient.setCity(this.txtCity.getText());
+        patient.setPhoneNumber(this.txtPhoneNumber.getText());
+
+        return patient;
     }
 }

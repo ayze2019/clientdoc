@@ -47,7 +47,7 @@ public class PatientBusinessImpl implements PatientBusiness {
     }
 
     @Override
-    public void save(String vorname, String nachname, Sex sex) {
+    public void save(Patient patient) {
         throw new ClientdocBusinessException("not implemented yet!");
     }
 
