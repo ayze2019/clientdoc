@@ -25,7 +25,7 @@
         <AnchorPane fx:id="newEntryPatient" visible="false" maxWidth="Infinity">
             <fx:include source="newEntryPatient.fxml"/>
         </AnchorPane>
-        <AnchorPane fx:id="searchPatientTable" visible="false">
+        <AnchorPane fx:id="searchPatientTable" visible="false" maxWidth="Infinity">
             <fx:include source="searchPatient.fxml"/>
         </AnchorPane>
     </StackPane>
