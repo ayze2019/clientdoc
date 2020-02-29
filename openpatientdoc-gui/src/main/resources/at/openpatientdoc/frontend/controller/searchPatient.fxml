@@ -7,7 +7,9 @@
             fx:controller="at.openpatientdoc.frontend.controller.PatientSearchController">
 
     <VBox>
-        <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
+        <padding>
+            <Insets top="25" right="25" bottom="25" left="25"/>
+        </padding>
 
         <HBox alignment="CENTER_LEFT" spacing="10">
             <Label fx:id="lblVorname" text="Vorname: "/>
