@@ -16,7 +16,7 @@
             <TextField fx:id="txtVorname" prefWidth="100.0" onKeyPressed="#onEnterKeyPressed"/>
             <Label fx:id="lblNachname" text="Nachname: " layoutX="14.0"/>
             <TextField fx:id="txtNachname" prefWidth="100.0" onKeyPressed="#onEnterKeyPressed"/>
-            <Button text="Suchen" layoutX="226.0" layoutY="15.0" mnemonicParsing="false" onAction="#triggerSearch"/>
+            <Button text="%general.search" layoutX="226.0" layoutY="15.0" mnemonicParsing="false" onAction="#triggerSearch"/>
         </HBox>
 
         <TableView fx:id="tableView" visible="false" maxHeight="250" maxWidth="Infinity">
