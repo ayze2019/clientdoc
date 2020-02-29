@@ -29,12 +29,13 @@ public class Patient {
     private String address;
     private String city;
     private String phoneNumber;
+    private String email;
 
     public Patient() {
         // do nothing
     }
 
-    public Patient(String forename, String surname, Sex sex, LocalDate birthdate, String socialInsuranceId, String socialInsuranceCarrier, String address, String city, String phoneNumber) {
+    public Patient(String forename, String surname, Sex sex, LocalDate birthdate, String socialInsuranceId, String socialInsuranceCarrier, String address, String city, String phoneNumber, String email) {
         this.forename = forename;
         this.surname = surname;
         this.sex = sex;
@@ -44,6 +45,7 @@ public class Patient {
         this.address = address;
         this.city = city;
         this.phoneNumber = phoneNumber;
+        this.email = email;
     }
 
     public String getForename() {
@@ -116,6 +118,14 @@ public class Patient {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public int getAge() {
