@@ -25,7 +25,7 @@ public class GreeterImpl implements Greeter {
 
     @PostConstruct
     public void init() {
-        System.out.println("in PostConstruct");
+        // do nothing
     }
 
     @Override
