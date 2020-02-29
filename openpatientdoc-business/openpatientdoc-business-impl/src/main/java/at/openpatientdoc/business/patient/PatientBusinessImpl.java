@@ -54,10 +54,10 @@ public class PatientBusinessImpl implements PatientBusiness {
     private List<Patient> generateFakeList() {
         List<Patient> patientBusinessList = new ArrayList<>();
 
-        patientBusinessList.add(new Patient("Oliver", "Queen", Sex.MALE, LocalDate.of(1990, 1, 1), "1234567890", "ÖGK", "address", "city", "+43123456790"));
-        patientBusinessList.add(new Patient("Felicity", "Smoak", Sex.FEMALE, LocalDate.of(1990, 1, 1), "1234567890", "ÖGK", "address", "city", "+43123456790"));
-        patientBusinessList.add(new Patient("Barry", "Allen", Sex.MALE, LocalDate.of(1990, 1, 1), "1234567890", "ÖGK", "address", "city", "+43123456790"));
-        patientBusinessList.add(new Patient("Kara", "Zor-El", Sex.FEMALE, LocalDate.of(1990, 1, 1), "1234567890", "ÖGK", "address", "city", "+43123456790"));
+        patientBusinessList.add(new Patient("Oliver", "Queen", Sex.MALE, LocalDate.of(1990, 1, 1), "1234567890", "ÖGK", "address", "city", "+43123456790", "1@2.at"));
+        patientBusinessList.add(new Patient("Felicity", "Smoak", Sex.FEMALE, LocalDate.of(1990, 1, 1), "1234567890", "ÖGK", "address", "city", "+43123456790", "3@4.at"));
+        patientBusinessList.add(new Patient("Barry", "Allen", Sex.MALE, LocalDate.of(1990, 1, 1), "1234567890", "ÖGK", "address", "city", "+43123456790", "5@6.at"));
+        patientBusinessList.add(new Patient("Kara", "Zor-El", Sex.FEMALE, LocalDate.of(1990, 1, 1), "1234567890", "ÖGK", "address", "city", "+43123456790", "7@8.at"));
 
         return patientBusinessList;
     }
