@@ -4,7 +4,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.layout.HBox?>
 <VBox id="vbox" maxWidth="Infinity"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="at.openpatientdoc.frontend.controller.IndexController">
@@ -23,15 +22,11 @@
     </MenuBar>
 
     <StackPane id="StackPane">
-        <HBox alignment="CENTER">
-            <AnchorPane fx:id="newEntryPatient" visible="false" maxWidth="Infinity">
-                <fx:include source="newEntryPatient.fxml"/>
-            </AnchorPane>
-        </HBox>
-        <HBox alignment="CENTER">
-            <AnchorPane fx:id="searchPatientTable" visible="false" maxWidth="Infinity">
-                <fx:include source="searchPatient.fxml"/>
-            </AnchorPane>
-        </HBox>
+        <AnchorPane fx:id="newEntryPatient" visible="false" maxWidth="Infinity">
+            <fx:include source="newEntryPatient.fxml"/>
+        </AnchorPane>
+        <AnchorPane fx:id="searchPatientTable" visible="false" maxWidth="Infinity">
+            <fx:include source="searchPatient.fxml"/>
+        </AnchorPane>
     </StackPane>
 </VBox>
