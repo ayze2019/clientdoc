@@ -19,21 +19,26 @@
             <Button text="Suchen" layoutX="226.0" layoutY="15.0" mnemonicParsing="false" onAction="#triggerSearch"/>
         </HBox>
 
-        <TableView fx:id="tableView" GridPane.columnIndex="0" GridPane.rowIndex="1" visible="false">
+        <TableView fx:id="tableView" visible="false" maxHeight="250" maxWidth="Infinity">
             <columns>
-                <TableColumn text="Vorname">
+                <TableColumn text="%search.patient.forename" maxWidth="Infinity">
                     <cellValueFactory>
                         <PropertyValueFactory property="forename"/>
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn text="Nachname">
+                <TableColumn text="%search.patient.surname" maxWidth="Infinity">
                     <cellValueFactory>
                         <PropertyValueFactory property="surname"/>
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn text="Geschlecht">
+                <TableColumn text="%search.patient.sex" maxWidth="Infinity">
                     <cellValueFactory>
                         <PropertyValueFactory property="sex"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="%search.patient.email" maxWidth="Infinity">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="email"/>
                     </cellValueFactory>
                 </TableColumn>
             </columns>
