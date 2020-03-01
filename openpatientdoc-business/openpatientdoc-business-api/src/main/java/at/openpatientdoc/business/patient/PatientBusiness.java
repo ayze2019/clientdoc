@@ -1,6 +1,6 @@
 package at.openpatientdoc.business.patient;
 
-import openpatientdoc.domainmodel.patient.Patient;
+import at.openpatientdoc.domainmodel.patient.Patient;
 
 import java.util.List;
 

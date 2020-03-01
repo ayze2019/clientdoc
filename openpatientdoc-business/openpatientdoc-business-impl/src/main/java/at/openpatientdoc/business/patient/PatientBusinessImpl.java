@@ -1,8 +1,8 @@
 package at.openpatientdoc.business.patient;
 
-import openpatientdoc.domainmodel.patient.Patient;
-import openpatientdoc.domainmodel.patient.Sex;
-import openpatientdoc.exception.OpenPatientDocBusinessException;
+import at.openpatientdoc.domainmodel.patient.Patient;
+import at.openpatientdoc.domainmodel.patient.Sex;
+import at.openpatientdoc.exception.OpenPatientDocBusinessException;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

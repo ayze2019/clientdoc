@@ -1,7 +1,7 @@
 package at.openpatientdoc.frontend.application;
 
 import at.openpatientdoc.frontend.FxWeaverSpringBootStarterSampleApplication;
-import openpatientdoc.exception.OpenPatientDocBusinessException;
+import at.openpatientdoc.exception.OpenPatientDocBusinessException;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;

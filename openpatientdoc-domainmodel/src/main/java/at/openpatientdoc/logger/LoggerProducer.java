@@ -1,4 +1,4 @@
-package at.openpatientdoc.business;
+package at.openpatientdoc.logger;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.InjectionPoint;

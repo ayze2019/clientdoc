@@ -1,4 +1,4 @@
-package openpatientdoc.exception;
+package at.openpatientdoc.exception;
 
 /**
  * Created by fs-green on 24.12.2019.

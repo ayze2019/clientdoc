@@ -1,4 +1,4 @@
-package openpatientdoc.domainmodel.patient;
+package at.openpatientdoc.domainmodel.patient;
 
 import java.time.LocalDate;
 import java.time.Period;

@@ -1,8 +1,8 @@
 package at.openpatientdoc.frontend.controller;
 
 import at.openpatientdoc.business.patient.PatientBusiness;
-import openpatientdoc.domainmodel.patient.Patient;
-import openpatientdoc.domainmodel.patient.Sex;
+import at.openpatientdoc.domainmodel.patient.Patient;
+import at.openpatientdoc.domainmodel.patient.Sex;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

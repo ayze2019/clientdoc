@@ -1,4 +1,4 @@
-package openpatientdoc.domainmodel.patient;
+package at.openpatientdoc.domainmodel.patient;
 
 import org.apache.commons.lang3.StringUtils;
 
