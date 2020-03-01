@@ -59,6 +59,7 @@ public class PrimaryStageInitializer implements ApplicationListener<StageReadyEv
             Stage stage = event.stage;
             Scene scene = new Scene(this.fxWeaver.loadView(IndexController.class, resourceBundle), 750, 400);
             stage.setScene(scene);
+            stage.setTitle("OpenPatientDoc");
             stage.show();
         } catch (IOException e) {
             throw new IllegalStateException(e);
