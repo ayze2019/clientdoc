@@ -41,6 +41,7 @@ public class PrimaryStageInitializer implements ApplicationListener<StageReadyEv
 
     @Autowired
     public PrimaryStageInitializer(FxWeaver fxWeaver) {
+        logger.info("initializing FxWeaver");
         this.fxWeaver = fxWeaver;
     }
 
