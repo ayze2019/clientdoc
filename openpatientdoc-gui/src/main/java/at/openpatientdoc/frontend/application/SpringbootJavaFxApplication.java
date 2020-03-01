@@ -8,6 +8,9 @@ import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
+import org.apache.log4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 
@@ -34,9 +37,11 @@ public class SpringbootJavaFxApplication extends Application {
     public static final String H2_VERSION = "h2-1.4.199.jar";
     private ConfigurableApplicationContext context;
 
+    private static Logger logger = Logger.getLogger(SpringbootJavaFxApplication.class);
+
     @Override
     public void init() {
-        // initialize spring context
+        logger.info("initialize spring context");
         this.context = new SpringApplicationBuilder()
                 .sources(FxWeaverSpringBootStarterSampleApplication.class)
                 .run(getParameters().getRaw().toArray(new String[0]));
@@ -47,29 +52,26 @@ public class SpringbootJavaFxApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+        logger.info("start JavaFx");
         Thread.setDefaultUncaughtExceptionHandler(SpringbootJavaFxApplication::showError);
         this.context.publishEvent(new StageReadyEvent(primaryStage));
     }
 
     @Override
     public void stop() {
+        logger.info("stop JavaFX");
         this.context.close();
         Platform.exit();
     }
 
     private static void showError(Thread t, Throwable e) {
-        System.err.println("***Default exception handler***");
-        if (Platform.isFxApplicationThread()) {
-            e.printStackTrace();
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Information Dialog");
-            alert.setHeaderText(null);
-            alert.setContentText(ExceptionUtils.getRootCause(e).getMessage());
+        logger.error("Error occured inside Application ", e);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Information Dialog");
+        alert.setHeaderText(null);
+        alert.setContentText(ExceptionUtils.getRootCause(e).getMessage());
 
-            alert.showAndWait();
-        } else {
-            e.printStackTrace();
-        }
+        alert.showAndWait();
     }
 
     private void initH2() {

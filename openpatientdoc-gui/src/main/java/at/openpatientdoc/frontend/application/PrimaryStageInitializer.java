@@ -4,6 +4,7 @@ import at.openpatientdoc.frontend.controller.IndexController;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import net.rgielen.fxweaver.core.FxWeaver;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
@@ -34,6 +35,8 @@ import java.util.ResourceBundle;
 @Component
 public class PrimaryStageInitializer implements ApplicationListener<StageReadyEvent> {
 
+    private static Logger logger = Logger.getLogger(SpringbootJavaFxApplication.class);
+
     private final FxWeaver fxWeaver;
 
     @Autowired
@@ -44,6 +47,7 @@ public class PrimaryStageInitializer implements ApplicationListener<StageReadyEv
     @Override
     public void onApplicationEvent(StageReadyEvent event) {
         ClassLoader classLoader = this.getClass().getClassLoader();
+        logger.info("loading correct messages.properties file");
         URL resource = classLoader.getResource("messages.properties");
 
         if (resource == null) {

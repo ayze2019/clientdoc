@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import net.rgielen.fxweaver.core.FxmlView;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -51,6 +52,9 @@ public class PatientSearchController {
     private TableView<Patient> tableView;
 
     @Autowired
+    private Logger logger;
+
+    @Autowired
     private PatientBusiness patientBusiness;
 
     @FXML
@@ -65,6 +69,7 @@ public class PatientSearchController {
     }
 
     private void search() {
+        this.logger.info("triggering search");
         this.tableView.setVisible(true);
         ObservableList<Patient> data = FXCollections.observableList(
                 this.patientBusiness.geData(this.txtVorname.getText(), this.txtNachname.getText()));

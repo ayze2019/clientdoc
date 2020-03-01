@@ -4,6 +4,8 @@ import openpatientdoc.domainmodel.patient.Patient;
 import openpatientdoc.domainmodel.patient.Sex;
 import openpatientdoc.exception.OpenPatientDocBusinessException;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
@@ -31,8 +33,12 @@ import java.util.stream.Stream;
 @Component
 public class PatientBusinessImpl implements PatientBusiness {
 
+    @Autowired
+    private Logger logger;
+
     @Override
     public List<Patient> geData(String vorname, String nachname) {
+        this.logger.info("getting data from database");
         Stream<Patient> stream = this.generateFakeList().stream();
 
         if (StringUtils.isNotEmpty(vorname)) {
@@ -48,6 +54,7 @@ public class PatientBusinessImpl implements PatientBusiness {
 
     @Override
     public void save(Patient patient) {
+        this.logger.info("saving patient");
         throw new OpenPatientDocBusinessException("not implemented yet!");
     }
 
