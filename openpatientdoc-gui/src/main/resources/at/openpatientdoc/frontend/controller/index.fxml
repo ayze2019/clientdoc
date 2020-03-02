@@ -17,7 +17,7 @@
             <MenuItem text="%index.menubar.klient.search.button" onAction="#openSearchNewPatient"/>
         </Menu>
         <Menu text="%index.menubar.help">
-            <MenuItem text="%index.menubar.help.about"/>
+            <MenuItem text="%index.menubar.help.about" onAction="#openAbout"/>
         </Menu>
     </MenuBar>
 

@@ -3,9 +3,15 @@ package at.openpatientdoc.frontend.controller;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import net.rgielen.fxweaver.core.FxmlView;
 import org.springframework.stereotype.Component;
+
+import java.io.IOException;
 
 /**
  * @author fs-green
@@ -49,5 +55,22 @@ public class IndexController {
     public void openSearchNewPatient(final ActionEvent event) {
         this.searchPatientTable.setVisible(true);
         this.newEntryPatient.setVisible(false);
+    }
+
+    @FXML
+    public void openAbout(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("about.fxml"));
+        // initializing the controller
+        AboutController aboutController = new AboutController();
+        fxmlLoader.setController(aboutController);
+
+        Scene scene = new Scene(fxmlLoader.load());
+        // this is the popup stage
+        Stage popupStage = new Stage();
+        popupStage.setTitle("About");
+        popupStage.initModality(Modality.WINDOW_MODAL);
+        popupStage.setScene(scene);
+        popupStage.showAndWait();
     }
 }
