@@ -2,8 +2,6 @@ package at.openpatientdoc.frontend.controller;
 
 import javafx.fxml.Initializable;
 import net.rgielen.fxweaver.core.FxmlView;
-import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.net.URL;
@@ -29,11 +27,8 @@ import java.util.ResourceBundle;
 @FxmlView("about.fxml")
 public class AboutController implements Initializable {
 
-    @Autowired
-    private Logger logger;
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        this.logger.info("in AboutController");
+        System.out.println("in AboutController");
     }
 }
